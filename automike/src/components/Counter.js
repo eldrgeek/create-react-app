@@ -7,19 +7,22 @@ if (module.hot) {
 }
 class Counter extends Component {
   constructor(props) {
+    console.log("counter consructed");
     super(props);
-    this.incrementAsync = this.incrementAsync.bind(this);
-    this.incrementIfOdd = this.incrementIfOdd.bind(this);
+    if(module.hot){ console.log ("hotter constructor")}
+    this.state = {count:0}
+
+
+    this.incrementLocal = this.incrementLocal.bind(this);
+    this.incrementAsyncLocal = this.incrementAsyncLocal.bind(this);
   }
 
-  incrementIfOdd() {
-    if (this.props.value % 2 !== 0) {
-      this.props.onIncrement()
-    }
+  incrementLocal() {
+   this.setState({count:this.state.count+1})
   }
 
-  incrementAsync() {
-    setTimeout(this.props.onIncrement, 1000)
+  incrementAsyncLocal() {
+    setTimeout(this.incrementLocal, 1000)
   }
 
   render() {
@@ -42,12 +45,12 @@ class Counter extends Component {
           -
         </button>
         {' '}
-        <button onClick={this.incrementIfOdd}>
-          Increment if odd
+        <button onClick={this.incrementLocal}>
+          Increment Locally {this.state.count}
         </button>
         {' '}
-        <button onClick={this.incrementAsync}>
-          Increment async
+        <button onClick={this.incrementAsyncLocal}>
+          Increment async Local
         </button>
       </div>
       }}

@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Counter from "./components/Counter"
+import { hot } from 'react-hot-loader/root'
 import './App.css';
 console.log("App is loaded");
 if (module.hot) {
@@ -35,4 +36,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default process.env.NODE_ENV === "development" ? hot(App) : App

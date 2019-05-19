@@ -4,7 +4,7 @@ if (module.hot) {
 }
 const rootReducer = (state = {counter:0,message:'none'}, action) => {
   console.log("reduced",state);
-  const increment = 1  ;
+  const increment = 10 ;
   let newObj = Object.assign({},state)
   switch (action.type) {
     case 'INCREMENT':
