@@ -1,6 +1,10 @@
+console.log("Reducer is loaded")
+if (module.hot) {
+    console.log("Root Reducer is hot")
+}
 const rootReducer = (state = {counter:0,message:'none'}, action) => {
   console.log("reduced",state);
-  const increment = 1;
+  const increment = 1  ;
   let newObj = Object.assign({},state)
   switch (action.type) {
     case 'INCREMENT':

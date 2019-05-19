@@ -2,8 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import Counter from "./components/Counter"
 import './App.css';
-
+console.log("App is loaded");
+if (module.hot) {
+    console.log("App is hot")
+}
 function App(props) {
+  console.log("App is called")
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +19,7 @@ function App(props) {
   />
 
         <p>
-          Edit <code>src/App.js</code> and then you can reload.
+          Edit the <code>src/App.js</code> and then you can reload.
         </p>
         <a
           className="App-link"
@@ -23,7 +27,7 @@ function App(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Do ths 
+          Do ths
           React
         </a>
       </header>

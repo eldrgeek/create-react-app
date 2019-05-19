@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ReactReduxContext } from 'react-redux'
-
+console.log("Counter is now loaded")
+if (module.hot) {
+    console.log("counter is hot")
+}
 class Counter extends Component {
   constructor(props) {
     super(props);
@@ -20,14 +23,14 @@ class Counter extends Component {
   }
 
   render() {
-
+    console.log("Counter rendered")
     const { value, onIncrement, onDecrement } = this.props
     return (
     <ReactReduxContext.Consumer>
       {({ store }) => {
         // do something with the store here
 
-      return <p>
+      return <div>
       <p>message {store.getState().message}</p>
         Clicked: {store.getState().counter} times
         {' '}
@@ -46,7 +49,7 @@ class Counter extends Component {
         <button onClick={this.incrementAsync}>
           Increment async
         </button>
-      </p>
+      </div>
       }}
      </ReactReduxContext.Consumer>
     )
