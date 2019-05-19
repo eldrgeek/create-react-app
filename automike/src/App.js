@@ -9,8 +9,8 @@ function App(props) {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter
-    value={props.store.getState()}
-        onIncrement={() => {console.log("inc"); props.store.dispatch({ type: 'INCREMENT' })}}
+     value={props.store.getState().counter}
+        onIncrement={() => {props.store.dispatch({type:'MESSAGE', text: 'testings'}); props.store.dispatch({ type: 'INCREMENT' })}}
     onDecrement={() => props.store.dispatch({ type: 'DECREMENT' })}
   />
 
@@ -23,7 +23,8 @@ function App(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Do ths React
+          Do ths 
+          React
         </a>
       </header>
     </div>

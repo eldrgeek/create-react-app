@@ -28,7 +28,8 @@ class Counter extends Component {
         // do something with the store here
 
       return <p>
-        Clicked: {value} times
+      <p>message {store.getState().message}</p>
+        Clicked: {store.getState().counter} times
         {' '}
         <button onClick={onIncrement}>
           +

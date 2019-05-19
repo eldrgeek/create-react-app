@@ -1,10 +1,17 @@
-const rootReducer = (state = 0, action) => {
+const rootReducer = (state = {counter:0,message:'none'}, action) => {
   console.log("reduced",state);
+  const increment = 1;
+  let newObj = Object.assign({},state)
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1
+      newObj.counter += increment;
+      return newObj;
     case 'DECREMENT':
-      return state - 1
+      newObj.counter -= increment;
+      return newObj;
+    case 'MESSAGE':
+     newObj.message = action.text;
+     return newObj;
     default:
       return state
   }
