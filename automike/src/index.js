@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
-
+import rootReducer from './redux/reducers'
 const store = configureStore()
 
 const render = () => {
@@ -27,6 +27,12 @@ if (module.hot) {
    render();
   })
 }
+
+if (module.hot) {
+      module.hot.accept('./redux/reducers', () => {
+        store.replaceReducer(rootReducer)
+      })
+    }
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
