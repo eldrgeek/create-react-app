@@ -2,7 +2,9 @@ console.log("Reducer is loaded")
 if (module.hot) {
     console.log("Root Reducer is hot")
 }
-const rootReducer = (state = {counter:0,message:'none'}, action) => {
+let counter = 0;
+const rootReducer = (
+    state = {counter:0,message:'none',logs:['message1','message2']}, action) => {
   console.log("reduced",state);
   const increment = 10 ;
   let newObj = Object.assign({},state)
@@ -10,11 +12,17 @@ const rootReducer = (state = {counter:0,message:'none'}, action) => {
     case 'INCREMENT':
       newObj.counter += increment;
       return newObj;
+    case 'LOG':
+        newObj.logs.unshift(action.text + "XXX")
+        return newObj;
+    case 'CLEAR':
+        newObj.logs = ['five'];
+        return newObj
     case 'DECREMENT':
       newObj.counter -= increment;
       return newObj;
     case 'MESSAGE':
-     newObj.message = action.text;
+     newObj.message = action.text + "XXXX " + counter++;
      return newObj;
     default:
       return state
