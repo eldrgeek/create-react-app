@@ -13,7 +13,11 @@ class ConsoleLine extends React.Component {
    render() {
      let key = this.props.level + "." + this.props.index
 
-    //   if(Array.isArray(this.props.line) ){
+      if(Array.isArray(this.props.line) ){
+
+        return (<li key={key}>
+          {this.props.level}XX {this.props.line}
+          // </li>)
     //     return (
     //      <li key={key}><ul key={key + "UL"}>
 
@@ -28,10 +32,11 @@ class ConsoleLine extends React.Component {
     //     return (<li key={key}>
     //       "Object"
     // </li>)
-    //   }else {
+      }else {
         return (<li key={key}>
           {this.props.level} {this.props.line}
     </li>)
+      }
       }
 
 

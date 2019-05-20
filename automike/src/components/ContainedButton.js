@@ -12,9 +12,10 @@ const styles = theme => ({
 });
 
 const ContainedButton = (props) => {
-const { classes } = props;
-    return <Button onClick={props.onClick} variant="contained" color="primary" className={classes.button}>
-        Primary
+let { classes,title,color } = props;
+    color = color || "primary";
+    return <Button onClick={props.onClick} variant="contained" color={color} className={classes.button}>
+        {title}
       </Button>
 }
 export default withStyles(styles)(ContainedButton);

@@ -17,12 +17,12 @@ function App(props) {
     <div className="App">
       <header className="App-header">
 
-        <ContainedButton
+        <ContainedButton title="Logged1" color="secondary"
           onClick={() => props.store.dispatch({type: "LOG", text:'logged1'})}
 
         />
-         <ContainedButton
-          onClick={() => props.store.dispatch({type: "LOG", text:'logged34'})}
+         <ContainedButton title="Logged2"
+          onClick={() => props.store.dispatch({type: "LOG", text:'logged2'})}
 
         />
         <Console store={props.store}/>

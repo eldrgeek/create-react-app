@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import styles from '../App.css';
-// import ContainedButton from './ContainedButton'
+import ContainedButton from './ContainedButton'
 
 import {connect} from 'react-redux'
 import ConsoleLine from './ConsoleLine'
@@ -24,7 +24,10 @@ class Console extends React.Component {
     // contents = [["this stuff here"]]
     return <div>
 
+<ContainedButton title="Clear" color="secondary"
+          onClick={this.clearMessages}
 
+        />
 
     {contents.map((line,index) => <ConsoleLine key={this.counter} level={this.counter++} index={index} line={line}></ConsoleLine>)}
 

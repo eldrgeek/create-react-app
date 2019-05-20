@@ -13,10 +13,10 @@ const rootReducer = (
       newObj.counter += increment;
       return newObj;
     case 'LOG':
-        newObj.logs.unshift(action.text + "XXX")
+        newObj.logs.unshift(action.text + "YY")
         return newObj;
     case 'CLEAR':
-        newObj.logs = ['five'];
+        newObj.logs = [];
         return newObj
     case 'DECREMENT':
       newObj.counter -= increment;
