@@ -6,6 +6,7 @@ import Console from "./components/Console"
 import { hot } from 'react-hot-loader/root'
 import './App.css';
 import ContainedButton from './components/ContainedButton'
+import Dictation from './components/Dictation'
 console.log("App is loaded");
 if (module.hot) {
     console.log("App is hot!")
@@ -16,8 +17,9 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
+      <Dictation/>
 
-        <ContainedButton title="Logged1" color="secondary"
+        <ContainedButton title="Logging1" color="secondary"
           onClick={() => props.store.dispatch({type: "LOG", text:'logged1'})}
 
         />
