@@ -1,9 +1,9 @@
 import React from "react"
-import ReactDOM from "react-dom"
-import styles from '../App.css';
+// import ReactDOM from "react-dom"
+// import styles from '../App.css';
 // import ContainedButton from './ContainedButton'
 
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 
 class ConsoleLine extends React.Component {
   constructor(props) {

@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { ReactReduxContext } from 'react-redux'
+import React from 'react'
+// import PropTypes from 'prop-types'
+// import { ReactReduxContext } from 'react-redux'
 import "../Dictation.css"
 import init from "../DictationController.js"
-const Dictation = function(props) {
-    setTimeout(init,1000);
-    return <div class="container">
-        <div class="text-box" id="text" contenteditable="true">
 
-            <textarea class="textarea" id="textarea" prompt="Talk here">
-                To begin here boy OK:
-    </textarea>
+const Dictation = function(props) {
+    let initStore = () => {init(props.store)}
+    return <div className="container">
+        <div className="text-box" id="text" >
+
+            <textarea className="textarea" id="textarea" />
+
         </div>
         <div id="footer">
-            <button id="start">Starting</button>
+            <button id="start" onClick={initStore}>Starting</button>
             <button id="stop">Stop</button>
-            <i class="fa fa-microphone"></i>
-            <p class="status" id="status" contenteditable="true" />
+            <i className="fa fa-microphone"></i>
+            <p className="status" id="status" contentEditable="true" />
         </div>
     </div>
 }
